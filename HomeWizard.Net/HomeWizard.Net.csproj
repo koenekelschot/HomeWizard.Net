@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.2</TargetFramework>
+    <Description>A .net package to get the communications going with a HomeWizard. You can use this package to control switches/dimmers and read all the data from the HomeWizard.</Description>
+    <Copyright>Copyright ©  2017</Copyright>
+    <Authors>peckham</Authors>
+    <Company>Koen Ekelschot</Company>
+    <RepositoryUrl>https://github.com/peckham/HomeWizard.Net</RepositoryUrl>
+    <PackageTags>HomeWizard</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
+</Project>
