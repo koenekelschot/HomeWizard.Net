@@ -6,8 +6,10 @@
     <Copyright>Copyright ©  2017</Copyright>
     <Authors>peckham</Authors>
     <Company>Koen Ekelschot</Company>
-    <RepositoryUrl>https://github.com/peckham/HomeWizard.Net</RepositoryUrl>
+    <RepositoryUrl></RepositoryUrl>
     <PackageTags>HomeWizard</PackageTags>
+    <PackageProjectUrl>https://github.com/peckham/HomeWizard.Net</PackageProjectUrl>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
