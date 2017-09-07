@@ -9,8 +9,8 @@
     <RepositoryUrl>https://github.com/peckham/HomeWizard.Net</RepositoryUrl>
     <PackageTags>HomeWizard</PackageTags>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-    <Version>1.0.1</Version>
-    <PackageReleaseNotes>Updated targetframeworks</PackageReleaseNotes>
+    <Version>1.0.2</Version>
+    <PackageReleaseNotes>Downgraded dependency</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net45' Or '$(TargetFramework)' == 'net46' Or '$(TargetFramework)' == 'net47'">
-    <PackageReference Include="System.Net.Http" Version="4.3.0" />
+    <PackageReference Include="System.Net.Http" Version="4.0.0" />
   </ItemGroup>
   
 
