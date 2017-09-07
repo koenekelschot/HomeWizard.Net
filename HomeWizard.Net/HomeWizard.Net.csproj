@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.2</TargetFramework>
+    <TargetFrameworks>netstandard1.2;net45;net46;net47</TargetFrameworks>
     <Description>A .net package to get the communications going with a HomeWizard. You can use this package to control switches/dimmers and read all the data from the HomeWizard.</Description>
     <Copyright>Copyright ©  2017</Copyright>
     <Authors>peckham</Authors>
@@ -10,11 +10,18 @@
     <PackageTags>HomeWizard</PackageTags>
     <PackageProjectUrl>https://github.com/peckham/HomeWizard.Net</PackageProjectUrl>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <Version>1.0.1</Version>
+    <PackageReleaseNotes>Updated targetframeworks</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
   </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net45' Or '$(TargetFramework)' == 'net46' Or '$(TargetFramework)' == 'net47'">
+    <PackageReference Include="System.Net.Http" Version="4.3.0" />
+  </ItemGroup>
+  
 
   <ItemGroup>
     <Folder Include="Models\" />
