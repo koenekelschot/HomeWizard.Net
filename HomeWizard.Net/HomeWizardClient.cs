@@ -40,7 +40,7 @@ namespace HomeWizard.Net
         /// </summary>
         /// <param name="ipAddress">The IP address of the HomeWizard</param>
         /// <param name="password">The password of the HomeWizard</param>
-        public HomeWizardClient(string ipAddress, string password) : base()
+        public HomeWizardClient(string ipAddress, string password) : this()
         {
             Connect(ipAddress, password);          
         }
