@@ -167,7 +167,14 @@ namespace HomeWizard.Net
         {
             return await GetData<Sensors>("get-sensors");
         }
-
+        
+        /// <summary>
+        /// Get the logs of Klik-Aan - Klik-Uit sensor
+        /// </summary>
+        public async Task<List<KakuSensorLog>> GetKaKuSensorLogs(long id)
+        {
+            return await GetData<List<KakuSensorLog>>("kks/get/" + id + "/log");
+        }
         /// <summary>
         /// Get the status of the HomeWizard.
         /// Returns the same object as Sensors but not all properties are populated
@@ -340,6 +347,24 @@ namespace HomeWizard.Net
             await GetData("sw/dim/" + id + "/" + NormalizeDimLevel(level));
         }
 
+        /// <summary>
+        /// Turn Somfy up
+        /// </summary>
+        /// <param name="id">Required: Id of the somfy device</param>
+        public async Task SomfyUp(long id)
+        {
+            await GetData("sf/" + id + "/up");
+        }
+
+        /// <summary>
+        /// Turn Somfy up
+        /// </summary>
+        /// <param name="id">Required: Id of the somfy device</param>
+        public async Task SomfyDown(long id)
+        {
+            await GetData("sf/" + id + "/down");
+        }
+
         //TODO: Hue lights
         //command: sw/<switch id>/[on/off]/[0..360]/[0..100]/[0..100]
         //Control a Hue light. Where the on or off switches the light on or off. The other values are: Hue, Saturation and Brightness in that order.
@@ -473,7 +498,7 @@ namespace HomeWizard.Net
             {
                 return await DoRequest(url);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw new HomeWizardClientException("Error sending request to HomeWizard", e);
             }
@@ -481,21 +506,18 @@ namespace HomeWizard.Net
 
         private async Task<string> DoRequest(string url)
         {
-            using (HttpRequestMessage request = new HttpRequestMessage { Method = HttpMethod.Get })
+            using (HttpResponseMessage response = await _httpClient.GetAsync(url))
             {
-                using (HttpResponseMessage response = await _httpClient.GetAsync(url))
-                {
-                    response.EnsureSuccessStatusCode();
-                    return await response.Content.ReadAsStringAsync();
-                }
+                response.EnsureSuccessStatusCode();
+                return await response.Content.ReadAsStringAsync();
             }
         }
 
         private int NormalizeDimLevel(int dimLevel)
         {
-            return (dimLevel < Constants.DimLevelMin) 
+            return (dimLevel < Constants.DimLevelMin)
                 ? Constants.DimLevelMin
-                : (dimLevel > Constants.DimLevelMax) 
+                : (dimLevel > Constants.DimLevelMax)
                     ? Constants.DimLevelMax
                     : dimLevel;
         }

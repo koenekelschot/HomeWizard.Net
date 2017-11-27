@@ -22,6 +22,6 @@ namespace HomeWizard.Net
         public IList<HueBridge> Hues { get; set; }
         public IList<Scene> Scenes { get; set; }
         public IList<KakuSensor> KakuSensors { get; set; }
-        public IList<Camera> Cameras { get; set; } 
+        public IList<Camera> Cameras { get; set; }
     }
 }
