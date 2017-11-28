@@ -9,8 +9,8 @@
     <RepositoryUrl>https://github.com/peckham/HomeWizard.Net</RepositoryUrl>
     <PackageTags>HomeWizard</PackageTags>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-    <Version>1.0.3</Version>
-    <PackageReleaseNotes>Fixed constructor</PackageReleaseNotes>
+    <Version>1.0.4</Version>
+    <PackageReleaseNotes>Added support for somfy and virtual devices.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
