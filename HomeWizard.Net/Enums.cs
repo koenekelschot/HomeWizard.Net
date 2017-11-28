@@ -5,12 +5,21 @@
         Off,
         On
     }
-    
+
+    public enum YesNo
+    {
+        Null,
+        No,
+        Yes
+    }
+
     public enum SwitchType
     {
         Switch,
         Dimmer,
-        Hue
+        Hue,
+        Somfy,
+        Virtual
     }
 
     public enum Preset

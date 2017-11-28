@@ -23,6 +23,15 @@ namespace HomeWizard.Net
             get { return GetType() == typeof (HueLight) && Type == SwitchType.Hue; }
         }
 
+        public bool IsSomfy
+        {
+            get { return GetType() == typeof(Somfy) && Type == SwitchType.Somfy; }
+        }
+
+        public bool IsVirtual
+        {
+            get { return GetType() == typeof(Virtual) && Type == SwitchType.Virtual; }
+        }
         public string Code { get; set; }
     }
 }

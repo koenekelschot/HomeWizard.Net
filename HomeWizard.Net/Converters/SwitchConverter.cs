@@ -18,6 +18,14 @@ namespace HomeWizard.Net.Converters
                 {
                     return new HueLight();
                 }
+                if (typeText == "somfy" || typeText == ((int)SwitchType.Somfy).ToString())
+                {
+                    return new Somfy();
+                }
+                if (typeText == "virtual" || typeText == ((int)SwitchType.Virtual).ToString())
+                {
+                    return new Virtual();
+                }
             }
             return new Switch();
         }
